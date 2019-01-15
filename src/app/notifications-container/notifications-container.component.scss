@@ -17,11 +17,16 @@
     border-radius: 50%;
     background: $blue;
     color: #fff;
-    box-shadow: 1px 2px 10px 2px rgba(48,75,112,0.5);
+    box-shadow: 1px 2px 10px 2px rgba($grey-darker, 0.5);
   }
 }
 
 .list {
   border-radius: 16px;
-  box-shadow: 1px 2px 10px 2px rgba(48,75,112,0.5);
+  box-shadow: 1px 2px 10px 2px rgba($grey-darker, 0.5);
+
+  &__loading {
+    padding: 1.6rem;
+    text-align: right;
+  }
 }

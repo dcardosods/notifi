@@ -11,6 +11,7 @@ import { NotificationItem } from '../notification-item';
 })
 export class NotificationsContainerComponent implements OnInit {
   notifications: NotificationItem[] = [];
+  isLoading = false;
 
   constructor(private notificationsService: NotificationsService) { }
 
@@ -18,6 +19,8 @@ export class NotificationsContainerComponent implements OnInit {
   }
 
   toggleNotifications() {
+    this.notifications = [];
+    this.isLoading = true;
     this.notificationsService.getAll()
       .subscribe(notifications => {
         this.notifications = notifications;

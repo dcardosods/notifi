@@ -2,7 +2,10 @@
   <button type="button" class="trigger__button" (click)="toggleNotifications()"></button>
 </div>
 
-<div *ngIf="notifications.length" class="list">
+<div *ngIf="isLoading" class="list">
+  <div *ngIf="!notifications.length" class="list__loading">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  </div>
   <app-notifications-item *ngFor="let notification of notifications"
     [notification]="notification"></app-notifications-item>
 </div>
