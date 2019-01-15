@@ -1,0 +1,8 @@
+<div class="trigger">
+  <button type="button" class="trigger__button" (click)="toggleNotifications()"></button>
+</div>
+
+<div *ngIf="notifications.length" class="list">
+  <app-notifications-item *ngFor="let notification of notifications"
+    [notification]="notification"></app-notifications-item>
+</div>
