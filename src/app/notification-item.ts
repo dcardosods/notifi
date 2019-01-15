@@ -30,7 +30,8 @@ export class NotificationItemDisplay {
         this.users = _.map(notification.items, 'userInNotification');
         this.title = this.users[0].firstName
           + (this.users.length > 1 ? ' and ' + (this.users.length - 1) + ' others' : '')
-          + ' have <b>birthday</b>';
+          + ' have '
+          + (this.users.length > 1 ? '<b>birthdays</b>' : '<b>birthday</b>');
         break;
 
       case NotificationItemEvent.project_commented:
@@ -42,7 +43,7 @@ export class NotificationItemDisplay {
           + ' <b>commented</b>'
           + (notification.items.length > 1
               ? ' to one of your <b>projects</b>'
-              : ' to your <b>project</p>');
+              : ' to your <b>project</b>');
         this.comment = notification.items[0].comment.comment;
         break;
 
@@ -53,7 +54,7 @@ export class NotificationItemDisplay {
           + ' <b>updated the status</b>'
           + (notification.items.length > 1
             ? ' of one of your <b>tasks</b>'
-            : ' of your <b>task</p>');
+            : ' of your <b>task</b>');
         this.comment = notification.items[0].taskStatus.name;
         break;
 

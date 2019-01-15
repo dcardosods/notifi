@@ -11,9 +11,11 @@
 </div>
 <div class="content">
   <p class="content__title" [innerHTML]="notificationDisplay.title"></p>
-  <p class="content__time">{{ notificationDisplay.time }}</p>
+  <p class="content__time">{{ notificationDisplay.time | timeago:live }}</p>
   <p class="content__text">{{ notificationDisplay.comment }}</p>
 </div>
 <div class="more">
-  <span *ngIf="notificationDisplay.count > 1">{{ notificationDisplay.count }} &raquo;</span>
+  <span class="count" *ngIf="notificationDisplay.count > 1">
+    {{ notificationDisplay.count }} <span class="caret">&raquo;</span>
+  </span>
 </div>
