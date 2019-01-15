@@ -13,6 +13,7 @@ export class NotificationItem {
 }
 
 export class NotificationItemDisplay {
+  event: NotificationItemEvent;
   isSeen = false;
   users = [];
   title = '';
@@ -21,6 +22,7 @@ export class NotificationItemDisplay {
   count = 0;
 
   constructor(notification: NotificationItem) {
+    this.event = notification.event;
     this.isSeen = _.every(notification.items, {seen: true});
     this.time = notification.items[0].updatedOn;
     this.count = notification.items.length;
