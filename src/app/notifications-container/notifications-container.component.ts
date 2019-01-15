@@ -28,7 +28,14 @@ export class NotificationsContainerComponent implements OnInit {
   private groupNotifications(notifications) {
     const orderedByDay = _.orderBy(notifications, ['updatedOn'], ['desc']);
     const groupedByDay = _.groupBy(orderedByDay, item => item.updatedOn.replace(/^(\d{4}-\d{2}-\d{2})(.+)$/, '$1'));
-    const groupedByEvent = _.map(groupedByDay, item => _.groupBy(item, 'event'));
-    return groupedByEvent;
+    const groupedByEvent = _.map(groupedByDay, group => _.groupBy(group, 'event'));
+    const normalized = _.map(groupedByEvent, group => {
+      const event = Object.keys(group)[0];
+      return {
+        event,
+        items: group[event]
+      };
+    });
+    return normalized;
   }
 }
