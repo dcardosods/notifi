@@ -4,7 +4,7 @@
 
 The idea is to have a button tha when you click it loads json from https://code-challenge.azurewebsites.net/api/CodeChallenge and then show it in the overlay.
 The data should be grouped by "event" (only those that belong to the same day).
-No need to use icons and real photos, focus on the grouping and how to build a the general UI.
+No need to use icons and real photos, focus on the grouping and how to build a [the UI design](notify-UI.png).
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
